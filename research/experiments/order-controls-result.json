@@ -1,0 +1,66 @@
+{
+  "reference": {
+    "order": {
+      "bytes": 1094862,
+      "sha256": "4d0fa5313c753c1ecf71e91a83e285894cdde20049711456e6514c07eb85c581"
+    },
+    "dictionary": {
+      "bytes": 411996,
+      "sha256": "4c8568cca9343b9a6212477880f56f8efd162f8784224a25edd043097d36215a"
+    }
+  },
+  "arms": {
+    "published": {
+      "executable": {
+        "bytes": 3426642,
+        "sha256": "eff2f4b0ebd350b49d6b69eadf20de4efb34e7025ad10c13a0dce9763db4e040"
+      },
+      "order": {
+        "bytes": 1094862,
+        "sha256": "fae2ecb6e2bab5d298b99394e195081ba41f5e25c653d20a616102d7883eb06b",
+        "matches_reference": false,
+        "first_difference": 227
+      },
+      "dictionary": {
+        "bytes": 411996,
+        "sha256": "4edbdaf65795a6d7853da8566843e12d151b800962af234635e0ab1bd2712ed9",
+        "matches_reference": false,
+        "first_difference": 263
+      }
+    },
+    "pre_static_rebuild": {
+      "executable": {
+        "bytes": 3417314,
+        "sha256": "9d577c4463814763e70e50e5901b339b7d9ed9242265016f8f3221a9111fd26f"
+      },
+      "order": {
+        "bytes": 1094862,
+        "sha256": "fae2ecb6e2bab5d298b99394e195081ba41f5e25c653d20a616102d7883eb06b",
+        "matches_reference": false,
+        "first_difference": 227
+      },
+      "dictionary": {
+        "bytes": 411996,
+        "sha256": "4edbdaf65795a6d7853da8566843e12d151b800962af234635e0ab1bd2712ed9",
+        "matches_reference": false,
+        "first_difference": 263
+      }
+    },
+    "label_rebuild": {
+      "executable": {
+        "bytes": 3359519,
+        "sha256": "8ddd1c1d4bb553c8b1a63d08cdd1a7241254ae4dfb84de8d553fd509b28269b3"
+      },
+      "dictionary": {
+        "bytes": 411996,
+        "sha256": "4edbdaf65795a6d7853da8566843e12d151b800962af234635e0ab1bd2712ed9",
+        "matches_reference": false,
+        "first_difference": 263
+      }
+    }
+  },
+  "native_guard": {
+    "exit_code": 1,
+    "message": "cmix error: the dictionary decompressed to 411996 bytes with hash 359f0ce5f1d5f6ac, expected 411996 bytes with hash 2c3946082300051a."
+  }
+}

@@ -11,5 +11,6 @@
 5. [Agent-assisted lab](agent-lab.md): a measured full-corpus baseline, slice-selection experiment, deterministic grading, ablations and independent verification.
 6. [Organizer site guide and inventory](site-guide.md): text of the substantive pages, link and resource manifests, reading routes, and scope limits.
 7. [Transformer weight recoding](experiments/transformer-weight-tables-result.md) and [release integration](experiments/transformer-weight-integration-result.md): 52,022 B saved across matched rebuilt packages after counting code. The short predictive payload and isolated decode matched; the full corpus was not run.
+8. [Release packing and article-order coding](experiments/packing-and-order.md): the smallest rebuilt pair is another 50,220 B smaller on disk. It restores the order exactly but cannot pass its native dictionary check on this host. The published portable control also returns incorrect dictionary bytes here. Do not treat either weigh-in as an eligible score.
 
 **First useful engineering step:** reproduce the current winner's package calculation and a clean decode before modifying its prediction model. Until then, a smaller experimental stream does not establish progress toward the prize. The full GNU gzip run in this dossier is a reproducible sanity reference; it is not a reproduction of a winning submission.
