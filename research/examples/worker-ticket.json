@@ -1,0 +1,6 @@
+{
+  "kind": "extract",
+  "question": "Does the reported transformer check establish full-corpus reproduction? Give the strongest supportable claim.",
+  "source": "research/experiments/late-replay.md, Follow-up",
+  "excerpt": "The July award-size transformer pair also passed the same 4 KiB stored-stream round trip using the mid-series Intel SDE installation. This is not native execution or proof of predictive-stream compatibility."
+}
