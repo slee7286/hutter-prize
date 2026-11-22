@@ -1,0 +1,37 @@
+{
+  "tool": {
+    "bytes": 630552,
+    "sha256": "6cf3932e8d94a81b705ca7714731dff7a25d4745feee15ef532c20fe52ec8474"
+  },
+  "elf": {
+    "bytes": 454936,
+    "sha256": "0dd45aaec5916831249afa6e700f0a7f8b46b3b214872d64644165a80c0a2e31"
+  },
+  "control_core": {
+    "bytes": 185900,
+    "sha256": "f526e0417ee91c6f5b75cd5c247f7b428e34d1a0e2ee3698c59da9f06f6adc55"
+  },
+  "new_core": {
+    "bytes": 167224,
+    "sha256": "785d96decd65193e8c4141aac1701e6c5c32af246f0aac68dbd75ed24d890197"
+  },
+  "both_unpacked_exact": true,
+  "baseline": 100350152,
+  "prediction": 20000,
+  "cmix": {
+    "bytes": 3372627,
+    "sha256": "3e88836348480eb0094b08d1f253de647a54a31bbd3a294b3ced6cc5e4651eb1"
+  },
+  "archive9": {
+    "bytes": 96940173,
+    "sha256": "38475c2680a163ab57a8f654901b1455fda6aebf7ad7a9e8d72f339fef801567"
+  },
+  "verdict": "keep",
+  "total": 100312800,
+  "net": 37352,
+  "short_payload": {
+    "bytes": 203,
+    "sha256": "c3402919079c606402a829d9afc704b37e132492f4a9583757a5be5f3e08cc71"
+  },
+  "exact_decode": true
+}
