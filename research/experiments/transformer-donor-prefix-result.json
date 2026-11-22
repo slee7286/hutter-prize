@@ -1,0 +1,79 @@
+{
+  "prefix_limit": 65536,
+  "wall_limit_s_per_arm": 240,
+  "corpus_payload": {
+    "bytes": 93768588,
+    "sha256": "23790928a63e4a33c918176a09ff0f7b16a047c4f0d4a7bb491975930fd9d710"
+  },
+  "predictive_length": 586459020,
+  "dictionary": {
+    "bytes": 411996,
+    "sha256": "4c8568cca9343b9a6212477880f56f8efd162f8784224a25edd043097d36215a"
+  },
+  "capture": "restored.cmix.temp FIFO from -d dictionary corpus.stream restored --transformer weights",
+  "arms": {
+    "t-fixed": {
+      "archive": {
+        "bytes": 96994188,
+        "sha256": "b5330c493ab2d2930469b9bc0d1d2de723ca9e1d660699bcf1be187edc087ae5"
+      },
+      "embedded_weights": {
+        "bytes": 2930652,
+        "sha256": "7f4db6c8c843a7e6264b6a48ed4805e9e431f543df7a9a0ecb37a35a5e4b8860"
+      },
+      "prefix": {
+        "bytes": 65536,
+        "sha256": "8bcefdc7ed0c7e8ca4c011250fae13e79f89b68bc2d5b4aad84e3937f8fe4860"
+      },
+      "stop": "prefix_limit",
+      "supervisor_exit": -9,
+      "elapsed_s": 27.414
+    },
+    "baseline": {
+      "archive": {
+        "bytes": 96984860,
+        "sha256": "b12b31e8adad2bd4f254bb0a87d61eb678b6573e5ab2f5fc68b7c6ecdd9a284b"
+      },
+      "embedded_weights": {
+        "bytes": 2930652,
+        "sha256": "7f4db6c8c843a7e6264b6a48ed4805e9e431f543df7a9a0ecb37a35a5e4b8860"
+      },
+      "prefix": {
+        "bytes": 65536,
+        "sha256": "8bcefdc7ed0c7e8ca4c011250fae13e79f89b68bc2d5b4aad84e3937f8fe4860"
+      },
+      "stop": "prefix_limit",
+      "supervisor_exit": -9,
+      "elapsed_s": 28.468
+    },
+    "candidate": {
+      "archive": {
+        "bytes": 96958849,
+        "sha256": "f286cf2aa58c5e13be0f9a7176f729fc5f4345fe2fb2846dc7685e18deb5739f"
+      },
+      "embedded_weights": {
+        "bytes": 2904249,
+        "sha256": "0de34e42cdb028cce2dbf413d5c2068ebf1aca858971365ecc6801a714ab57fa"
+      },
+      "prefix": {
+        "bytes": 65536,
+        "sha256": "8bcefdc7ed0c7e8ca4c011250fae13e79f89b68bc2d5b4aad84e3937f8fe4860"
+      },
+      "stop": "prefix_limit",
+      "supervisor_exit": -9,
+      "elapsed_s": 27.669
+    }
+  },
+  "comparisons": {
+    "t-fixed:baseline": {
+      "status": "match"
+    },
+    "t-fixed:candidate": {
+      "status": "match"
+    },
+    "baseline:candidate": {
+      "status": "match"
+    }
+  },
+  "verdict": "all matched"
+}
