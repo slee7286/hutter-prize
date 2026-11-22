@@ -1,0 +1,34 @@
+url	http	bytes_including_error_bodies	sha256_if_ok
+https://www.hutter1.net/prize/	200	54356	aed08e09d3a83ef50b09f01434567844e6cfd7d2aa9cf546b4e91c9429a69f56
+https://www.hutter1.net/prize/>http:/www.hutter1.net/ai/introref.htm	404	977	
+https://www.hutter1.net/prize/award1.gif	200	117442	25ca7c2f2fa8be05072a1e2d15301e4be740c4808444952b239fb6ac57aaa1cc
+https://www.hutter1.net/prize/award10.gif	200	108780	d4084cded0ed1a9e247de90977e7e55a1c2a7f47b91e5adf5da14aaac3352791
+https://www.hutter1.net/prize/award11.gif	200	108854	0e935ad8235ffe5071eceb55e72802da04ebd04039a11f861ea433e16b5f5f9a
+https://www.hutter1.net/prize/award12.gif	404	977	
+https://www.hutter1.net/prize/award2.gif	200	117255	9c946dd8644689c08b7163e20451602f4758dbe293b32cec75ae812a57260c8d
+https://www.hutter1.net/prize/award3.gif	200	114422	370e28337bc29aea9247bdbaf2dff8110b0ba2d25bde5df6a6c084ae39b50ec3
+https://www.hutter1.net/prize/award4.gif	200	106970	2cc68d245c2da12719ac41f3b3c24d0b07d74299c7f9f3b4446f53d0919dd18f
+https://www.hutter1.net/prize/award5.gif	200	98169	a14fa5db9db6b0dae6375c4384df02cf061e0cfd622e960b48a816d34d560caa
+https://www.hutter1.net/prize/award6.gif	200	105413	2ca609fc489689cec31421cdb8e7096858ccafb5ad1062b5a4b340c759ff0f44
+https://www.hutter1.net/prize/award7.gif	200	104422	b1aaab0439dea7da40c8be0ae1d6eb32707b5f1e893a07e5e44331516794b0e6
+https://www.hutter1.net/prize/award8.gif	200	109803	b57d6569a6bee36ae4dc376c30290aee072965550c5452ad23f5e3a836cff227
+https://www.hutter1.net/prize/award9.gif	200	111417	5a810b107f504cdd8349ffa9905d80463e79308dfd331c38a9ec67fa9deea67b
+https://www.hutter1.net/prize/compai	404	977	
+https://www.hutter1.net/prize/compuse	404	977	
+https://www.hutter1.net/prize/freelan.jpg	200	50441	096b5e2a9e964f08b04d9e2687105edfd19ec86d1c7d135267030a7fa4db368d
+https://www.hutter1.net/prize/hfaq.htm	200	97969	233d07bd10c156c1a9b5effd8e0aa8e74c74c86a0ee7f351418b6fb4e22419cf
+https://www.hutter1.net/prize/hmedal.gif	200	12318	1867b2af20bbef2b957a12ff9dcb6c082c2cd775ec1cf323ae5ff675fac445bb
+https://www.hutter1.net/prize/hmedals.gif	200	3197	ffcc610c4d37e9b3a61348ec64f2254f4f11286f04cd19c6570da3f588f642f3
+https://www.hutter1.net/prize/hpledge.pdf	200	5097	abebb6dafb7c2921e50a306e94d81760d5b29fa0270ff16050ccba74e21ff1d5
+https://www.hutter1.net/prize/hpledge.txt	200	3167	904d3fca49136a31ea46a403f4ed0ccc01ef94eca4c7d560f55ddb9431d6d3b4
+https://www.hutter1.net/prize/hrules.htm	200	15907	e55d9f96b227e61ec0996adaf36304185d74db8c17093b403bb325240b2dc163
+https://www.hutter1.net/prize/index.htm	200	54356	aed08e09d3a83ef50b09f01434567844e6cfd7d2aa9cf546b4e91c9429a69f56
+https://www.hutter1.net/prize/ivanov.jpg	200	43136	90e5f4a169b1d7e9d8f3815fd86a864846fce89b60987a999b0e10f840f87b2a
+https://www.hutter1.net/prize/knoll.jpg	200	57986	af18b1ae7a6cdcb5010b20791db21897af4c147d2504819994fe3399a5941ad5
+https://www.hutter1.net/prize/kumar.jpg	200	20241	a05b65a9b936629a514fd96cee40d66e6ad989496d09a41ad17ea7cec3adbac3
+https://www.hutter1.net/prize/marcouch.jpg	200	25962	526fc00ff635573ca112502099ac91641c0eb227f2a706c41a1cb47b51012b37
+https://www.hutter1.net/prize/margaritov.jpg	200	13684	1ed870a49bfe098caeec6ca15d92865bfdf18540f776b4414f1379b6d9e920ee
+https://www.hutter1.net/prize/orav.jpg	200	10897	b67afbb1e301f9233844f8f42e6ac33caf547164cb4af325b55fc65331611ef0
+https://www.hutter1.net/prize/perplexity	404	977	
+https://www.hutter1.net/prize/rhatushnyak.png	200	50679	ad747cff4fe10cc330366e91db36e73f2d2e861068d90730580bcab1c835f5a2
+https://www.hutter1.net/prize/rhatushnyak123.jpg	200	6397	cf7ed1dc336fdf3e2913480dbff04153a7469a4046c7bd0126bd69752652d87e
