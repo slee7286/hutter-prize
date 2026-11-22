@@ -1,0 +1,19 @@
+{
+  "source": {
+    "bytes": 1094862,
+    "sha256": "4d0fa5313c753c1ecf71e91a83e285894cdde20049711456e6514c07eb85c581"
+  },
+  "transformed": {
+    "bytes": 282095,
+    "sha256": "adc787ddfb1c8aea3b118fed3c480dd5b8902f47bb89b39d8e20ef53eec17fd8"
+  },
+  "old_order_bytes": 201042,
+  "stream": {
+    "bytes": 209371,
+    "sha256": "68d3e8d27d528176df0526ff195f1cf95426be5f3e996fbcbd4e85925731a32d"
+  },
+  "saving_before_code": -8329,
+  "exact": true,
+  "prediction_net": 28000,
+  "verdict": "reject"
+}
