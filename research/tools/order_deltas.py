@@ -39,7 +39,42 @@ def decode(buf):
     return bytes(out)
 
 
-def run(packed):
+def label_encode(source):
+    ids = list(map(int, source.splitlines()))
+    need(
+        ids and min(ids) >= 0 and len(set(ids)) == len(ids),
+        "expected unique nonnegative IDs",
+    )
+    labels = [0] * (max(ids) + 1)
+    prev = -1
+    run_id = 0
+    for v in ids:
+        if v > prev:
+            run_id += 1
+        labels[v] = run_id
+        prev = v
+    need(run_id <= 65535, "run label out of range")
+    return bytes(v % 256 for v in labels) + bytes(v // 256 for v in labels)
+
+
+def label_decode(buf):
+    need(len(buf) % 2 == 0, "bad plane lengths")
+    n = len(buf) // 2
+    groups = {}
+    for i in reversed(range(n)):
+        v = buf[i] + 256 * buf[n + i]
+        if v:
+            groups.setdefault(v, []).append(i)
+    return b"".join(f"{i}\n".encode() for v in sorted(groups) for i in groups[v])
+
+
+def run(packed, mode="deltas"):
+    need(mode in ("labels", "deltas"), "unknown order representation")
+    transform, inverse, predicted = (
+        (label_encode, label_decode, 14000)
+        if mode == "labels"
+        else (encode, decode, 28000)
+    )
     rdir = ROOT / "research/experiments"
     ref = json.loads((rdir / "core-packing-result.json").read_text())
     core = packed / "cmix"
@@ -49,8 +84,8 @@ def run(packed):
     source = (
         ROOT / "build/weight-research-src/src/readalike_prepr/data/new_article_order"
     ).read_bytes()
-    raw = encode(source)
-    need(decode(raw) == source, "order is not canonical")
+    raw = transform(source)
+    need(inverse(raw) == source, "order is not canonical")
     (p / "deltas").write_bytes(raw)
     enc = box(
         p, "enc", {"cmix": core, "src": p / "deltas"}, ["./cmix", "-n", "src", "stream"]
@@ -63,7 +98,7 @@ def run(packed):
         ["./cmix", "-d", "stream", "decoded"],
     )
     restored = (dec / "decoded").read_bytes()
-    need(restored == raw and decode(restored) == source, "mismatch")
+    need(restored == raw and inverse(restored) == source, "mismatch")
     old = json.loads((rdir / "transformer-integration-packages.json").read_text())[
         "order"
     ]["bytes"]
@@ -75,7 +110,8 @@ def run(packed):
         "stream": meta(stream.read_bytes()),
         "saving_before_code": old - new,
         "exact": True,
-        "prediction_net": 28000,
+        "method": mode,
+        "prediction_net": predicted,
         "verdict": "integrate" if old > new else "reject",
     }
     text = json.dumps(result, indent=2) + "\n"
@@ -84,4 +120,4 @@ def run(packed):
 
 
 if __name__ == "__main__":
-    run(Path(sys.argv[1]).resolve())
+    run(Path(sys.argv[1]).resolve(), *sys.argv[2:])
