@@ -1,0 +1,14 @@
+# Hutter Prize research dossier
+
+**22 November 2026.** The objective is the smallest eligible *whole package* that recreates a fixed billion bytes, not the smallest payload, lowest perplexity, or fastest compressor. The [organizer's current table](https://www.hutter1.net/prize/#prev) lists Vladimir Ivanov's `fx2-cmix-T` at **100,424,672 bytes**. A conservative target satisfying both the table and the [formal minimum](https://www.hutter1.net/prize/hrules.htm#award) is **99,420,424 bytes or fewer**. Verify the live record again before submitting.
+
+## Read in this order
+
+1. [The contest protocol](protocol.md): corpus identity, what is counted, exact threshold, machine budget, conflicting historical language, licensing and the submission checklist.
+2. [How lossless compression works](compression.md): the technical background, algorithms, standards and their relevance to enwik9.
+3. [Winning submissions](winners.md): the two competition eras, baselines versus actual awards, byte accounting and documented techniques.
+4. [Public discussions](discussions.md): discussion evidence, disputes and access limits. Commentary is not a ruling.
+5. [Agent-assisted lab](agent-lab.md): a measured full-corpus baseline, slice-selection experiment, deterministic grading, ablations and independent verification.
+6. [Organizer site guide and inventory](site-guide.md): text of the substantive pages, link and resource manifests, reading routes, and scope limits.
+
+**First useful engineering step:** reproduce the current winner's package calculation and a clean decode before modifying its prediction model. Until then, a smaller experimental stream does not establish progress toward the prize. The full GNU gzip run in this dossier is a reproducible sanity reference; it is not a reproduction of a winning submission.
