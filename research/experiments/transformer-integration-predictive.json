@@ -1,0 +1,38 @@
+{
+  "input": {
+    "bytes": 10240,
+    "sha256": "443f66215cc8c604ef1f20e651da6af53f93e122528b153cbca4f8564cc2e8d5"
+  },
+  "baseline": {
+    "header_length": 10245,
+    "payload": {
+      "bytes": 203,
+      "sha256": "c3402919079c606402a829d9afc704b37e132492f4a9583757a5be5f3e08cc71"
+    },
+    "probability_trace": {
+      "bytes": 4200450,
+      "sha256": "d5a36ec2be1410e037a1d9656ebca627ddb9ad5c45d287019d04b0a70b51467a"
+    },
+    "rows": 10245
+  },
+  "candidate": {
+    "header_length": 10245,
+    "payload": {
+      "bytes": 203,
+      "sha256": "c3402919079c606402a829d9afc704b37e132492f4a9583757a5be5f3e08cc71"
+    },
+    "probability_trace": {
+      "bytes": 4200450,
+      "sha256": "d5a36ec2be1410e037a1d9656ebca627ddb9ad5c45d287019d04b0a70b51467a"
+    },
+    "rows": 10245
+  },
+  "payloads_equal": true,
+  "traces_equal": true,
+  "decoded_equal": true,
+  "restored": {
+    "bytes": 10240,
+    "sha256": "443f66215cc8c604ef1f20e651da6af53f93e122528b153cbca4f8564cc2e8d5"
+  },
+  "verdict": "keep"
+}
