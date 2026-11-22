@@ -61,10 +61,14 @@ PY
     rc=0; /usr/bin/time -v -o "$work/encode.time" "${box[@]}" --ro-bind "$root/data/enwik9" /input --chdir /work/encode "${engine[@]}" ./cmix -e /input enwik9.comp > "$work/encode.log" 2>&1 || rc=$?
     echo "encoder exit=$rc"; [[ $rc == 0 || $rc == 134 ]]; cmp "$file" "$work/encode/archive9"; echo "$n: generated SFX byte-identical"
   fi
-  /usr/bin/time -v -o "$work/decode.time" "${box[@]}" "${engine[@]}" ./archive9 > "$work/decode.log" 2>&1
-  out=$work/enwik9_uncompressed; [[ -f $out ]] || out=$work/enwik9_restored
+  # Exclude encoder and probe scratch from all decoder-visible files.
+  dest=$run/$n-restore; mkdir "$dest"
+  for i in "${!box[@]}"; do [[ ${box[$i]} != "$work" ]] || box[$i]=$dest; done
+  "${box[@]}" /usr/bin/time -v "${engine[@]}" ./archive9 > "$work/decode.log" 2>&1
+  out=$dest/enwik9_uncompressed; [[ -f $out ]] || out=$dest/enwik9_restored
   [[ ! -L $out && $(stat -c %s "$out") == 1000000000 ]]; printf '%s  %s\n' "$corpus" "$out" | sha256sum -c -
   echo "$n: full restore verified"; # keep logs and output, discard successful scratch
+  mv "$out" "$work/verified-enwik9"; out=$work/verified-enwik9; rm -rf "$dest"
   python3 - "$work" "$out" <<'PY'
 import pathlib,sys,shutil
 p,out=map(pathlib.Path,sys.argv[1:]);
