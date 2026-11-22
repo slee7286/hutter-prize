@@ -1,0 +1,55 @@
+{
+  "donor": "t-fixed",
+  "corpus_payload": {
+    "bytes": 93768588,
+    "sha256": "23790928a63e4a33c918176a09ff0f7b16a047c4f0d4a7bb491975930fd9d710"
+  },
+  "dictionary": {
+    "bytes": 100096,
+    "sha256": "8317d54a4641f88e76e337a04f1a3b17215760519aeca1accc0450054f004f2f"
+  },
+  "order": {
+    "bytes": 201042,
+    "sha256": "e540898ca86cd5f41a08d2d80442139074964df1f1ef98c6130262f40e403474"
+  },
+  "baseline": {
+    "core": {
+      "bytes": 185508,
+      "sha256": "08dde3a3ba85ba60b3aa516908a4ae86838183390c811368699caa29d85eda08"
+    },
+    "weights": {
+      "bytes": 2930652,
+      "sha256": "7f4db6c8c843a7e6264b6a48ed4805e9e431f543df7a9a0ecb37a35a5e4b8860"
+    },
+    "cmix": {
+      "bytes": 3417314,
+      "sha256": "9d577c4463814763e70e50e5901b339b7d9ed9242265016f8f3221a9111fd26f"
+    },
+    "archive9": {
+      "bytes": 96984860,
+      "sha256": "b12b31e8adad2bd4f254bb0a87d61eb678b6573e5ab2f5fc68b7c6ecdd9a284b"
+    },
+    "combined": 100402174
+  },
+  "candidate": {
+    "core": {
+      "bytes": 185900,
+      "sha256": "f526e0417ee91c6f5b75cd5c247f7b428e34d1a0e2ee3698c59da9f06f6adc55"
+    },
+    "weights": {
+      "bytes": 2904249,
+      "sha256": "0de34e42cdb028cce2dbf413d5c2068ebf1aca858971365ecc6801a714ab57fa"
+    },
+    "cmix": {
+      "bytes": 3391303,
+      "sha256": "bd5ea802b6dfcaca34bd81099dec95b9ba6578ebbd14dd167d7015817f3f08df"
+    },
+    "archive9": {
+      "bytes": 96958849,
+      "sha256": "f286cf2aa58c5e13be0f9a7176f729fc5f4345fe2fb2846dc7685e18deb5739f"
+    },
+    "combined": 100350152
+  },
+  "net_bytes_saved": 52022,
+  "added_nonweight_bytes": 784
+}

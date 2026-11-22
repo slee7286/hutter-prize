@@ -1,0 +1,73 @@
+diff --git a/cpp_infer/src/opt/arena_build.cpp b/cpp_infer/src/opt/arena_build.cpp
+index c1e3014..4bf1cf7 100644
+--- a/cpp_infer/src/opt/arena_build.cpp
++++ b/cpp_infer/src/opt/arena_build.cpp
+@@ -47,7 +47,7 @@ void OptModel::load(const char* weights_path) {
+     if (std::fread(magic, 1, 8, f) != 8) magic[0] = 0;
+     std::fclose(f);
+   }
+-  WeightsFile wf = std::memcmp(magic, "FX2TFWC", 7) == 0
++  WeightsFile wf = (std::memcmp(magic, "FX2TFT01", 8) == 0 || std::memcmp(magic, "FX2TFWC", 7) == 0)
+                        ? WeightsFile::load_compressed(weights_path)
+                        : WeightsFile::load(weights_path);
+ 
+diff --git a/cpp_infer/src/weights_io_compressed.cpp b/cpp_infer/src/weights_io_compressed.cpp
+index 366544a..3d6db7b 100644
+--- a/cpp_infer/src/weights_io_compressed.cpp
++++ b/cpp_infer/src/weights_io_compressed.cpp
+@@ -280,6 +280,11 @@ struct ModelsV2 {
+ 
+ WeightsFile load_v2(Reader& r, const char* path) {
+   uint32_t n_tensors = r.u32();
++  uint32_t n_side=r.u32();
++  r.need(n_side);
++  Reader side{r.p, n_side, path};
++  r.p+=n_side; r.left-=n_side;
++  r.need(5);
+   BinDecoder dec(r.p, r.left);
+   ModelsV2 m;
+ 
+@@ -325,8 +330,24 @@ WeightsFile load_v2(Reader& r, const char* path) {
+         if (t.dtype != DT_I8) die("%s: %s: ENC_INT4 on dtype %u", path,
+                                   name.c_str(), unsigned(t.dtype));
+         int8_t* out = reinterpret_cast<int8_t*>(t.data.data());
+-        for (size_t k = 0; k < numel; k++)
+-          out[k] = int8_t(int(dec.decode_tree(m.int4.data(), 4)) - 7);
++        uint16_t p[15]{};
++        for (unsigned j=1; j<15; ++j) {
++          uint8_t lo = side.u8();
++          p[j] = uint16_t(lo | (unsigned(side.u8()) << 8));
++          if (!p[j] || p[j] >= 2048) die("invalid static table");
++        }
++        for (size_t k=0; k<numel; ++k) {
++          unsigned node=1;
++          while (node<16) {
++            int bit=0;
++            if (node!=15) {
++              uint16_t tmp=p[node];
++              bit=dec.decode_bit(&tmp);  // discard adaptive update
++            }
++            node=2*node+unsigned(bit);
++          }
++          out[k]=int8_t(int(node)-16-7);
++        }
+         break;
+       }
+       case ENC_BF16: {
+@@ -379,6 +400,7 @@ WeightsFile load_v2(Reader& r, const char* path) {
+     if (!wf.tensors.emplace(name, std::move(t)).second)
+       die("%s: duplicate tensor %s", path, name.c_str());
+   }
++  if (side.left) die("unused table bytes");
+   return wf;
+ }
+ 
+@@ -399,7 +421,7 @@ WeightsFile WeightsFile::load_compressed(const char* path) {
+   Reader r{buf.data(), buf.size(), path};
+   char magic[8];
+   r.read(magic, 8);
+-  if (std::memcmp(magic, "FX2TFWC2", 8) == 0) return load_v2(r, path);
++  if (std::memcmp(magic, "FX2TFT01", 8) == 0) return load_v2(r, path);
+   if (std::memcmp(magic, "FX2TFWC1", 8) != 0) die("%s: bad magic", path);
+ 
+   uint32_t n_tensors = r.u32();
