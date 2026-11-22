@@ -1,0 +1,30 @@
+{
+  "source": "83f2603f3f7751da5f429fd32669807eb8510494",
+  "compiler": "15.2.0",
+  "flags": [
+    "-std=c++17",
+    "-Os",
+    "-s",
+    "-ffunction-sections",
+    "-fdata-sections",
+    "-Wl,--gc-sections"
+  ],
+  "original_bytes": 2930652,
+  "candidate_bytes": 2904249,
+  "original_sha256": "7f4db6c8c843a7e6264b6a48ed4805e9e431f543df7a9a0ecb37a35a5e4b8860",
+  "candidate_sha256": "0de34e42cdb028cce2dbf413d5c2068ebf1aca858971365ecc6801a714ab57fa",
+  "baseline_reencoded_exactly": true,
+  "all_tensors_identical": true,
+  "tensors": 434,
+  "int4_tensors": 111,
+  "int4_weights": 5868864,
+  "table_bytes": 3108,
+  "extra_framing_bytes": 4,
+  "canonical_dump_bytes": 39617261,
+  "canonical_dump_sha256": "91f65976c6bce8b9253b6940426a57d470c2077ab7bf02cccf11ed129ece27f5",
+  "old_standalone_decoder": 35032,
+  "new_standalone_decoder": 35032,
+  "both_copy_model_saving": 52806,
+  "projected_net_with_standalone_delta": 52806,
+  "corpus_run": false
+}

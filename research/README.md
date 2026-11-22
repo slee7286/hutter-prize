@@ -10,5 +10,6 @@
 4. [Public discussions](discussions.md): discussion evidence, disputes and access limits. Commentary is not a ruling.
 5. [Agent-assisted lab](agent-lab.md): a measured full-corpus baseline, slice-selection experiment, deterministic grading, ablations and independent verification.
 6. [Organizer site guide and inventory](site-guide.md): text of the substantive pages, link and resource manifests, reading routes, and scope limits.
+7. [Transformer weight recoding experiment](experiments/transformer-weight-tables-result.md): a measured 52,806 B reduction across the two model copies; production code size and a full predictive decode remain unverified.
 
 **First useful engineering step:** reproduce the current winner's package calculation and a clean decode before modifying its prediction model. Until then, a smaller experimental stream does not establish progress toward the prize. The full GNU gzip run in this dossier is a reproducible sanity reference; it is not a reproduction of a winning submission.
