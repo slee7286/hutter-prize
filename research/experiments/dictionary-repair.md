@@ -1,0 +1,9 @@
+# Dictionary repair and native prefix gate
+
+The unchanged `t-fixed/cmix -c` produced a 100,096 B stream, equal in length to the embedded stream but first differing at compressed offset 181. In separate empty sandboxes the published program and the label candidate recovered all 411,996 reference bytes from the fresh stream. [Receipt](dictionary-fresh-result.json). Replace only the dictionary in the 100,299,932 B pair, charging both copies. This is a compatibility repair, not an optimization.
+
+Native startup of the repaired pair recovered the correct dictionary in both programs and the pinned complete order in the compressor. The argument-less archive reached the raw 65,536-byte stop but failed the old prefix comparison; the extracted complete corpus payload and weights are unchanged. No size experiments before all gates pass.
+
+## Prefix discrepancy: paired diagnostic, before measurement
+
+The earlier prefix harness gives `-d` an explicit dictionary file named `dictionary`. In native archive startup the same bytes exist under `.dict`. The model independently opens `.dict` in `fxcmv1.cpp:420`. Compare (a) the repaired argument-less archive, (b) explicit `-d` with recovered assets and no `.dict`, (c) the identical explicit call with a read-only alias `.dict` to the very same recovered bytes. Keep package, complete payload and weights fixed. Save and compare all exact-length prefixes, including the old pinned reference, with first differing offsets. Separately exercise the short predictive fixture even if the native prefix fails. If (b) matches the old reference and (c) matches native but not (b), the reference was obtained in a different model configuration; do not change it or claim a passing baseline. If the alias does not separate the arms, do not assign this cause. Stop on an unresolved native compatibility gate; no corpus run.
