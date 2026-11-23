@@ -102,9 +102,7 @@ def pack():
     return result
 
 
-def box(parent, label, mounts, argv):
-    out = parent / label
-    out.mkdir()
+def sandbox(out, mounts):
     cmd = [
         "bwrap",
         "--unshare-all",
@@ -140,6 +138,13 @@ def box(parent, label, mounts, argv):
     ]
     for n, f in mounts.items():
         cmd.extend(["--ro-bind", str(f), "/w/" + n])
+    return cmd
+
+
+def box(parent, label, mounts, argv):
+    out = parent / label
+    out.mkdir()
+    cmd = sandbox(out, mounts)
     with (parent / (label + ".log")).open("wb") as log:
         subprocess.run(
             [*cmd, *argv], check=True, stdout=log, stderr=subprocess.STDOUT, timeout=240

@@ -1,0 +1,76 @@
+{
+  "cmix": {
+    "bytes": 3359519,
+    "sha256": "f53340c070ffcb0db08d52d352da273fe12d4af1118cfdbee1b3e2866d7def9c"
+  },
+  "archive9": {
+    "bytes": 96940413,
+    "sha256": "2263090e400066ef0f96d79b1c2751deb3d5eab08cbe4fae7597a26dbfdddf22"
+  },
+  "total": 100299932,
+  "embedded_dictionary": {
+    "bytes": 100096,
+    "sha256": "e2fc4bf0b0ad6bbb99c394a4d0b3386a121c53726718a71a080639d8910b59cc"
+  },
+  "both_recovered_dictionaries": {
+    "bytes": 411996,
+    "sha256": "4c8568cca9343b9a6212477880f56f8efd162f8784224a25edd043097d36215a"
+  },
+  "restored_order": {
+    "bytes": 1094862,
+    "sha256": "4d0fa5313c753c1ecf71e91a83e285894cdde20049711456e6514c07eb85c581"
+  },
+  "short_payload": {
+    "bytes": 203,
+    "sha256": "c3402919079c606402a829d9afc704b37e132492f4a9583757a5be5f3e08cc71"
+  },
+  "exact_short_bytes": 10240,
+  "archive_native_prefix": {
+    "bytes": 65536,
+    "sha256": "9fbddcfcb1973957b92e2d5d1fe3c0d3f59fa11d1fbcc788224b166a141b000d"
+  },
+  "native_vs_pinned": {
+    "bytes": 65536,
+    "sha256": "9fbddcfcb1973957b92e2d5d1fe3c0d3f59fa11d1fbcc788224b166a141b000d",
+    "matches_reference": false,
+    "first_difference": 6
+  },
+  "explicit_controls": {
+    "explicit": {
+      "vs_pinned": {
+        "bytes": 65536,
+        "sha256": "8bcefdc7ed0c7e8ca4c011250fae13e79f89b68bc2d5b4aad84e3937f8fe4860",
+        "matches_reference": true,
+        "first_difference": null
+      },
+      "vs_native": {
+        "bytes": 65536,
+        "sha256": "8bcefdc7ed0c7e8ca4c011250fae13e79f89b68bc2d5b4aad84e3937f8fe4860",
+        "matches_reference": false,
+        "first_difference": 6
+      }
+    },
+    "explicit-alias": {
+      "vs_pinned": {
+        "bytes": 65536,
+        "sha256": "9fbddcfcb1973957b92e2d5d1fe3c0d3f59fa11d1fbcc788224b166a141b000d",
+        "matches_reference": false,
+        "first_difference": 6
+      },
+      "vs_native": {
+        "bytes": 65536,
+        "sha256": "9fbddcfcb1973957b92e2d5d1fe3c0d3f59fa11d1fbcc788224b166a141b000d",
+        "matches_reference": true,
+        "first_difference": null
+      }
+    }
+  },
+  "verdict": "blocked",
+  "archive_prefix_stop": "prefix_limit",
+  "unchanged_corpus_payload": {
+    "bytes": 93768588,
+    "sha256": "23790928a63e4a33c918176a09ff0f7b16a047c4f0d4a7bb491975930fd9d710"
+  },
+  "blocked_size_reference": 100299932,
+  "repair_cost": 0
+}
